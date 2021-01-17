@@ -165,7 +165,7 @@
     -1                  , /*  KBD_START      */
     KBD_LTRIGGER_MAPPING  , /*  KBD_LTRIGGER   */
     KBD_RTRIGGER_MAPPING  , /*  KBD_RTRIGGER   */
-    -1                  , /*  KBD_JOY_FIRE   */
+    -1                   , /*  KBD_JOY_FIRE   */
     CPC_J0_UP           , /*  KBD_JOY_UP     */
     CPC_J0_RIGHT        , /*  KBD_JOY_RIGHT  */
     CPC_J0_DOWN         , /*  KBD_JOY_DOWN   */
@@ -540,9 +540,11 @@ cpc_decode_key(int psp_b, int button_pressed)
     }
     // kbd_select_button_active = button_pressed;
   } else {
+#ifndef MIYOO_MODE
   if (psp_b == KBD_FIRE) {
     kbd_home_button_released = !button_pressed;
   } else {
+#endif
 
     kbd_select_button_active = false;
     kbd_start_button_active  = false;
@@ -581,7 +583,9 @@ cpc_decode_key(int psp_b, int button_pressed)
         kbd_ltrigger_mapping_active = 0;
       }
     }
+#ifndef MIYOO_MODE
   }
+#endif
 }
 
   // if((kbd_select_button_active && kbd_start_button_active) || kbd_home_button_released){

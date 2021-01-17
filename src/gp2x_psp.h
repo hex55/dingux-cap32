@@ -56,8 +56,6 @@ typedef struct gp2xCtrlData SceCtrlData;
 
 #ifdef MIYOO_MODE
 
-#define RG_POWER          	SDLK_RCTRL
-
 #define GP2X_UP             SDLK_UP //80 //SDLK_KP8
 #define GP2X_DOWN           SDLK_DOWN // 88 //SDLK_KP2
 #define GP2X_LEFT           SDLK_LEFT // 83 //SDLK_KP4
@@ -69,8 +67,8 @@ typedef struct gp2xCtrlData SceCtrlData;
 #define GP2X_Y              SDLK_LSHIFT //25 //SDLK_w
 #define GP2X_L              SDLK_TAB //46 //SDLK_l
 #define GP2X_R              SDLK_BACKSPACE //27 //SDLK_r
-#define GP2X_START          SDLK_RETURN //36 //SDLK_RETURN
-#define GP2X_SELECT         SDLK_ESCAPE //39  //SDLK_s
+#define GP2X_START          SDLK_ESCAPE //36 //SDLK_RETURN
+#define GP2X_SELECT         SDLK_RCTRL //39  //SDLK_s
 
 #define GP2X_UPLEFT          (-1)
 #define GP2X_UPRIGHT         (-2)
@@ -78,7 +76,7 @@ typedef struct gp2xCtrlData SceCtrlData;
 #define GP2X_DOWNRIGHT       (-4)
 #define GP2X_VOLUP           (-6)
 #define GP2X_VOLDOWN         (-7)
-#define GP2X_FIRE            (-8)
+#define GP2X_FIRE            SDLK_RETURN
 
 #else //MIYOO
 
