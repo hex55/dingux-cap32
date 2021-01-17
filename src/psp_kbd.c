@@ -74,7 +74,7 @@
    "RIGHT",
    "DOWN",
    "LEFT",
-# if defined(DINGUX_MODE) || defined(GCW0_MODE)
+# if defined(GCW0_MODE) || defined(DINGUX_MODE)
    "X",      // Triangle
    "A",      // Circle
    "B",      // Cross
@@ -102,7 +102,7 @@
    "L_RIGHT",
    "L_DOWN",
    "L_LEFT",
-# if defined(DINGUX_MODE) || defined(GCW0_MODE)
+# if defined(GCW0_MODE) || defined(DINGUX_MODE)
    "L_X",      // Triangle
    "L_A",      // Circle
    "L_B",      // Cross
@@ -130,7 +130,7 @@
    "R_RIGHT",
    "R_DOWN",
    "R_LEFT",
-# if defined(DINGUX_MODE) || defined(GCW0_MODE)
+# if defined(GCW0_MODE) || defined(DINGUX_MODE)
    "R_X",      // Triangle
    "R_A",      // Circle
    "R_B",      // Cross
@@ -500,13 +500,13 @@ psp_kbd_enter_danzeff()
     psp_kbd_wait_no_button();
 
   } else if (danzeff_key == DANZEFF_SELECT) {
-    // danzeff_mode        = 0;
-    // danzeff_cpc_pending = 0;
-    // danzeff_cpc_key     = 0;
-    // psp_main_menu();
-    // psp_init_keyboard();
+    danzeff_mode        = 0;
+    danzeff_cpc_pending = 0;
+    danzeff_cpc_key     = 0;
+    psp_main_menu();
+    psp_init_keyboard();
 
-    // psp_kbd_wait_no_button();
+    psp_kbd_wait_no_button();
   }
 
   return 0;
@@ -716,7 +716,7 @@ psp_kbd_wait_button(void)
 int
 psp_update_keys(void)
 {
-  int         b;
+  int b;
 
   static char first_time = 1;
   static int release_pending = 0;
