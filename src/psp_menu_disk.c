@@ -114,6 +114,7 @@ psp_disk_auto()
 {
   char Buffer[128];
   int  index;
+  int  bufferNull = 0;
   int  found = 0;
   int  first_bas = -1;
   int  first_spc = -1;
@@ -125,9 +126,16 @@ psp_disk_auto()
 
   if (RunName != (char *)0 ) {
 
-    if (!strcasecmp(RunName, "|CPM")) strcpy(Buffer, "|CPM");
-    else  snprintf(Buffer, MAX_PATH, "RUN\"%s", RunName);
-
+    if (!strcasecmp(RunName, "|CPM")) 
+    {
+      strcpy(Buffer, "|CPM");
+      bufferNull = 1;
+    }
+    else
+    {
+      snprintf(Buffer, MAX_PATH, "RUN\"%s", RunName);
+      bufferNull = 1;
+    }  
   } else {
 
     for (index = 0; index < cpc_dsk_num_entry; index++) {
@@ -151,7 +159,8 @@ psp_disk_auto()
 
       if (cpc_dsk_system) {
         strcpy(Buffer, "|CPM");
-      } else return psp_disk_menu();
+        bufferNull = 1;
+      } //else return psp_disk_menu();
 
     } else {
       if (first_bas != -1) cur_name_id = first_bas;
@@ -161,9 +170,11 @@ psp_disk_auto()
       if (first_bin != -1) cur_name_id = first_bin;
 
       sprintf(Buffer, "RUN\"%s", cpc_dsk_dirent[cur_name_id]);
+      bufferNull = 1;
     }
   }
-  if (CPC.psp_explore_disk == CPC_EXPLORE_FULL_AUTO) {
+  if (CPC.psp_explore_disk == CPC_EXPLORE_FULL_AUTO) {  
+    if (bufferNull == 0) sprintf(Buffer, "RUN\"DISC");
     strcat(Buffer, "\n");
   }
   psp_kbd_run_command(Buffer, 12);

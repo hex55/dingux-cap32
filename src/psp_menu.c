@@ -283,7 +283,8 @@ static void
 psp_main_menu_command(void)
 {
   if (cur_command == 0) {
-    psp_main_menu_run_command();
+    psp_disk_auto();
+    //psp_main_menu_run_command();
   } else {
     char buffer[128];
     strcpy(buffer, command_name[cur_command]);

@@ -157,15 +157,15 @@
     CPC_CUR_RIGHT       , /*  KBD_RIGHT      */
     CPC_CUR_DOWN        , /*  KBD_DOWN       */
     CPC_CUR_LEFT        , /*  KBD_LEFT       */
-    CPC_RETURN          , /*  KBD_TRIANGLE   */
-    CPC_J0_FIRE2        , /*  KBD_CIRCLE     */
-    CPC_J0_FIRE1        , /*  KBD_CROSS      */
-    CPC_DEL             , /*  KBD_SQUARE     */
+    CPC_RETURN          , /*  KBD_TRIANGLE  X */
+    CPC_J0_FIRE2        , /*  KBD_CIRCLE    A */
+    CPC_J0_FIRE1        , /*  KBD_CROSS     B */
+    CPC_J0_UP           , /*  KBD_SQUARE    Y */
     -1                  , /*  KBD_SELECT     */
     -1                  , /*  KBD_START      */
     KBD_LTRIGGER_MAPPING  , /*  KBD_LTRIGGER   */
     KBD_RTRIGGER_MAPPING  , /*  KBD_RTRIGGER   */
-    -1                   , /*  KBD_JOY_FIRE   */
+    1                   , /*  KBD_JOY_FIRE   */
     CPC_J0_UP           , /*  KBD_JOY_UP     */
     CPC_J0_RIGHT        , /*  KBD_JOY_RIGHT  */
     CPC_J0_DOWN         , /*  KBD_JOY_DOWN   */

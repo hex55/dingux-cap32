@@ -78,7 +78,7 @@ typedef struct gp2xCtrlData SceCtrlData;
 #define GP2X_VOLDOWN         (-7)
 #define GP2X_FIRE            SDLK_RETURN
 
-#else //MIYOO
+#else //MIYOO_MODE
 
 #if defined(WIZ_MODE) || defined(GP2X_MODE)
 
@@ -165,7 +165,7 @@ typedef struct gp2xCtrlData SceCtrlData;
 #define GP2X_VOLDOWN       82    //SDLK_KP_MINUS
 
 #endif
-#endif //MIYOO
+#endif //MIYOO_MODE
 
 #define GP2X_NOEVENT -1
 
