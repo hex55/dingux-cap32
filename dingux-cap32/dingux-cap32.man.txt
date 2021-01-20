@@ -286,6 +286,11 @@ For the exact syntax of those mapping files, have a
 look on sample files already presents in the kbd
 directory (default.kbd etc ...).
 
+If you edit a mapping file outside the emulator, take 
+into account that the Start button is assigned to the 
+JOY_FIRE field, the Start and Select fields of the 
+configuration file are not used.
+
 After writting such keyboard mapping file, you can
 load them using the main menu inside the emulator.
 
