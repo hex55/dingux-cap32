@@ -173,8 +173,10 @@ psp_disk_auto()
       bufferNull = 1;
     }
   }
-  if (CPC.psp_explore_disk == CPC_EXPLORE_FULL_AUTO) {  
-    if (bufferNull == 0) sprintf(Buffer, "RUN\"DISC");
+  
+  if (bufferNull == 0) sprintf(Buffer, "RUN\"DISC");
+  
+  if (CPC.psp_explore_disk == CPC_EXPLORE_FULL_AUTO) {
     strcat(Buffer, "\n");
   }
   psp_kbd_run_command(Buffer, 12);
